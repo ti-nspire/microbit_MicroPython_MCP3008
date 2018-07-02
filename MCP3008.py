@@ -24,11 +24,11 @@ if __name__ == "__main__":
     # baudrate=1000000, bits=8, mode=0, sclk=pin13, mosi=pin15, and miso=pin14
     spi.init()
 
-    # Instantiate the MCP3008 class with !CS assigned to pinX.
+    # Instantiate the MCP3008 class with !CS assigned to pin16.
     adc = MCP3008(CSpin=pin16)
 
     while True:
-        # Get 10-bit data by converting the voltage applied to the channel X of MCP3008.
+        # Get 10-bit data by converting the voltage applied to the channel 0 of MCP3008.
         ADdata = adc.read(CH=0)
         volt   = ADdata * 3.23/1024.0
 
